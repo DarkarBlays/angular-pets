@@ -1,0 +1,151 @@
+<form>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Registro de Mascota</h2>
+        <p>Completa la información de tu nueva mascota</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Ingresa el nombre de tu mascota"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="birthDate">Fecha de Nacimiento</label>
+          <input
+            type="date"
+            class="form-control"
+            id="birthDate"
+            placeholder="Selecciona una fecha"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="type">Tipo</label>
+          <select class="form-control" id="type">
+            <option>Selecciona un tipo</option>
+            <!-- Add options here -->
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="gender">Género</label>
+          <select class="form-control" id="gender">
+            <option>Selecciona un género</option>
+            <option>Hombre</option>
+            <option>Mujer</option>
+            <option>Muyer</option>
+            <!-- Add options here -->
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="size">Talla</label>
+          <select class="form-control" id="size">
+            <option>Selecciona una talla</option>
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+            <!-- Add options here -->
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="color">Color</label>
+          <input
+            type="text"
+            class="form-control"
+            id="color"
+            placeholder="Ingresa el color de tu mascota"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="story">Historia</label>
+          <textarea
+            class="form-control"
+            id="story"
+            rows="3"
+            placeholder="Cuéntanos la historia de tu mascota"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Habilidades Especiales</h3>
+        <div class="form-group">
+          <label for="specialSkills"
+            >Ingresa las habilidades de tu mascota:</label
+          >
+          <textarea
+            class="form-control"
+            id="specialSkills"
+            rows="3"
+            placeholder="Ej: busca, senta, hace trucos"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="energyLevel">Nivel de Energía</label>
+          <div class="slider">
+            <input type="range" id="energyLevel" min="0" max="100" value="50" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="compatibility">Compatibilidad</label>
+          <div class="slider">
+            <input
+              type="range"
+              id="compatibility"
+              min="0"
+              max="100"
+              value="50"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="state">Estado</label>
+          <select class="form-control" id="state" style="width: 100%">
+            <option>Selecciona un estado</option>
+            <!-- Add options here -->
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-register">Registrar Mascota</button>
+      </div>
+    </div>
+  </div>
+</form>
