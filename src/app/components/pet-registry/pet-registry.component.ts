@@ -7,7 +7,7 @@ import { PetService } from '../../services/pet.service';
   selector: 'app-pet-registry',
   standalone: true,
   templateUrl: './pet-registry.component.html',
-  styleUrls: ['./pet-registry.component.css']
+  styleUrls: ['./pet-registry.component.css'],
 })
 export class PetRegistryComponent implements OnInit {
   pet: Pet = new Pet();

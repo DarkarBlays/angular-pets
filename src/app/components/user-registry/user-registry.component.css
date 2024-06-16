@@ -1,0 +1,110 @@
+/* Estilo general del formulario */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #171717; /* Fondo similar al del login */
+    color: #fff;
+    border: 1px solid #333;
+    max-width: 600px; /* Ancho máximo del formulario */
+    width: 100%;
+    margin: 20px auto; /* Margen superior e inferior para centrar el formulario */
+}
+
+/* Estilo del título */
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    text-align: center; /* Centrado del texto */
+    color: #00bfff; /* Color del texto */
+}
+
+/* Estilo del mensaje y enlace de registro */
+.message, 
+.signin {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.7); /* Color del texto con transparencia */
+    text-align: center; /* Centrado del texto */
+}
+
+/* Estilo del enlace de registro */
+.signin a:hover {
+    text-decoration: underline royalblue; /* Subrayado del enlace al pasar el ratón */
+}
+
+.signin a {
+    color: #00bfff; /* Color del enlace */
+}
+
+/* Contenedor flex para los campos de nombre y apellido */
+.field {
+    display: flex;
+    gap: 10px; /* Espacio entre los elementos */
+}
+
+
+/* Estilo de las etiquetas y campos de entrada */
+.form label {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    position: relative;
+}
+
+.form label .input {
+    background-color: #333; /* Fondo del campo de entrada */
+    color: #fff; /* Color del texto */
+    width: 100%; /* Ancho completo */
+    padding: 15px; /* Espaciado del contenido */
+    outline: 0; /* Sin contorno al enfocar */
+    border: 1px solid rgba(105, 105, 105, 0.397); /* Borde con transparencia */
+    border-radius: 10px; /* Borde redondeado */
+}
+
+.form label .input + span {
+    color: rgba(255, 255, 255, 0.5); /* Color del texto con transparencia */
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    font-size: 0.9em; /* Tamaño del texto */
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+    top: 20px;
+    font-size: 1em;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+    color: #00bfff; /* Color del texto cuando está enfocado o válido */
+    top: 2px;
+    font-size: 0.8em;
+    font-weight: 600; /* Peso del texto */
+}
+
+.input {
+    font-size: medium; /* Tamaño del texto */
+}
+
+/* Estilo del botón de enviar */
+.submit {
+    border: none; /* Sin borde */
+    outline: none; /* Sin contorno */
+    padding: 15px; /* Espaciado del contenido */
+    border-radius: 10px; /* Borde redondeado */
+    color: #fff; /* Color del texto */
+    font-size: 16px; /* Tamaño del texto */
+    background-color: #00bfff; /* Fondo del botón */
+    cursor: pointer; /* Cambio del cursor */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+
+.submit:hover {
+    background-color: #00bfff96; /* Fondo del botón al pasar el ratón */
+}
