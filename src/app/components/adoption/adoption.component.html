@@ -1,33 +1,95 @@
+<!-- adoption.component.html -->
 <div class="container mt-5">
-  <h2>Detalles del animal</h2>
-  <div *ngIf="animalDetail">
-    <p><strong>Nombre:</strong> {{ animalDetail.name }}</p>
-    <p><strong>Fecha de Nacimiento:</strong> {{ animalDetail.birthDate }}</p>
-    <p><strong>Tipo:</strong> {{ animalDetail.type }}</p>
-    <p><strong>Género:</strong> {{ animalDetail.gender }}</p>
-    <p><strong>Tamaño:</strong> {{ animalDetail.size }}</p>
-    <p><strong>Color:</strong> {{ animalDetail.color }}</p>
-    <p><strong>Historia:</strong> {{ animalDetail.story }}</p>
-    <p><strong>Habilidades Especiales:</strong> {{ animalDetail.specialSkills }}</p>
-    <p><strong>Nivel de Energía:</strong> {{ animalDetail.energyLevel }}</p>
-    <p><strong>Compatibilidad:</strong> {{ animalDetail.compatibility }}</p>
-    <p><strong>Estado:</strong> {{ animalDetail.status }}</p>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <img *ngIf="animalDetail" src="{{ animalDetail.imageUrl }}" alt="{{ animalDetail.name }}" class="img-fluid">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2>Detalles del animal</h2>
+          <div *ngIf="animalDetail">
+            <div class="mb-3">
+              <label for="name" class="form-label"><strong>Nombre:</strong></label>
+              <span>{{ animalDetail.name }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="birthDate" class="form-label"><strong>Fecha de Nacimiento:</strong></label>
+              <span>{{ animalDetail.birthDate }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="type" class="form-label"><strong>Tipo:</strong></label>
+              <span>{{ animalDetail.type }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="gender" class="form-label"><strong>Género:</strong></label>
+              <span>{{ animalDetail.gender }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="size" class="form-label"><strong>Tamaño:</strong></label>
+              <span>{{ animalDetail.size }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="color" class="form-label"><strong>Color:</strong></label>
+              <span>{{ animalDetail.color }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="story" class="form-label"><strong>Historia:</strong></label>
+              <span>{{ animalDetail.story }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="specialSkills" class="form-label"><strong>Habilidades Especiales:</strong></label>
+              <span>{{ animalDetail.specialSkills }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="energyLevel" class="form-label"><strong>Nivel de Energía:</strong></label>
+              <span>{{ animalDetail.energyLevel }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="compatibility" class="form-label"><strong>Compatibilidad:</strong></label>
+              <span>{{ animalDetail.compatibility }}</span>
+            </div>
+            <div class="mb-3">
+              <label for="status" class="form-label"><strong>Estado:</strong></label>
+              <span>{{ animalDetail.status }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  
-  <h2>Formulario de adopción</h2>
-  <form (ngSubmit)="onSubmit()" #adoptionForm="ngForm">
-    <div class="mb-3">
-      <label for="adoptionDate" class="form-label">Fecha de adopción</label>
-      <input type="date" class="form-control" id="adoptionDate" name="adoptionDate"  required>
+
+  <!-- Envolver el formulario en una caja centrada -->
+  <div class="row justify-content-center mt-5 mb-5">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h2>Formulario de adopción</h2>
+          <form (ngSubmit)="onSubmit()" #form="ngForm">
+            <div class="mb-3">
+              <label for="adoptionDate" class="form-label">Fecha de adopción</label>
+              <input type="date" class="form-control" id="adoptionDate" name="adoptionDate" required [(ngModel)]="adoptionForm.adoptionDate" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="adoptionType" class="form-label">Tipo de adopción</label>
+              <select class="form-control" id="adoptionType" name="adoptionType" required [(ngModel)]="adoptionForm.adoptionType" (change)="onAdoptionTypeChange()">
+                <option value="" disabled selected>Seleccione un tipo</option>
+                <option value="Temporal">Temporal</option>
+                <option value="Permanente">Permanente</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="adoptionDuration" class="form-label">Duración de adopción</label>
+              <input type="text" class="form-control" id="adoptionDuration" name="adoptionDuration" required [(ngModel)]="adoptionForm.adoptionDuration" [disabled]="adoptionForm.adoptionType === 'Permanente'">
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="adoptionType" class="form-label">Tipo de adopción</label>
-      <input type="text" class="form-control" id="adoptionType" name="adoptionType" required>
-    </div>
-    <div class="mb-3">
-      <label for="adoptionDuration" class="form-label">Duración de adopción</label>
-      <input type="text" class="form-control" id="adoptionDuration" name="adoptionDuration" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
-  </form>
+  </div>
 </div>

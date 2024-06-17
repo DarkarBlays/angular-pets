@@ -16,6 +16,7 @@ interface AnimalDetail {
   energyLevel: string;
   compatibility: string;
   status: string;
+  imageUrl: string; // Agrega la propiedad imageUrl
 }
 
 @Component({
@@ -39,13 +40,13 @@ export class AdoptionComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    const animalId = this.route.snapshot.paramMap.get('id');
-    if (animalId) {
-      this.getAnimalDetail(animalId);
-    } else {
-      // Manejar el caso donde no hay un ID válido
-      console.error('No se proporcionó un ID de animal válido');
-    }
+    this.getAnimalDetail('1');
+    this.setDefaultAdoptionDate();
+  }
+
+  setDefaultAdoptionDate() {
+    const today = new Date().toISOString().split('T')[0];
+    this.adoptionForm.adoptionDate = today;
   }
 
   getAnimalDetail(id: string) {
@@ -63,9 +64,16 @@ export class AdoptionComponent implements OnInit {
       specialSkills: 'Habilidades especiales',
       energyLevel: 'Alto',
       compatibility: 'Compatible con niños y otros animales',
-      status: 'Disponible'
+      status: 'Disponible',
+      imageUrl: 'https://imgs.search.brave.com/OeCUcSltf0mKOKTV86oizKMxLpbVsaKoT7AJOrutifc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50Lm5hdGlvbmFs/Z2VvZ3JhcGhpYy5j/b20uZXMvbWVkaW8v/MjAyMy8xMS8wOC9t/YXN0aW4taW5nbGVz/LWlzdG9jay1kYXJ3/aW4tYnJhbmRpc19m/MzU3NDU4OF8yMzEx/MDgxODQzNTdfODAw/eDgwMC5qcGc' // Agrega una URL de imagen
     };
     this.adoptionForm.pet_id = this.animalDetail.id;
+  }
+
+  onAdoptionTypeChange() {
+    if (this.adoptionForm.adoptionType === 'Permanente') {
+      this.adoptionForm.adoptionDuration = '';
+    }
   }
 
   onSubmit() {

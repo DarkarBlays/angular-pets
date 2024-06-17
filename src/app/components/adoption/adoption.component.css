@@ -1,14 +1,41 @@
+/* adoption.css */
 .container-fluid {
-    background-color: #f8f9fa; /* Color de fondo del carrusel */
-  }
-  
-  .carousel {
-    width: 100%;
-    height: 60vh; /* Ajusta la altura del carrusel según tus necesidades */
-  }
-  
-  .carousel-item img {
-    height: 100%;
-    object-fit: cover;
-  }
-  
+  background-color: #f8f9fa; /* Color de fondo del carrusel */
+}
+
+.carousel {
+  width: 100%;
+  height: 60vh; /* Ajusta la altura del carrusel según tus necesidades */
+}
+
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estilos para la imagen del animal */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto; /* Centrar la imagen */
+}
+
+/* Estilos para la caja de detalles del animal */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* Estilos para los detalles del animal */
+.mb-3 label {
+  font-weight: bold;
+}
+
+.mb-3 span {
+  font-size: 1.1rem;
+}
