@@ -1,0 +1,14 @@
+.container-fluid {
+    background-color: #f8f9fa; /* Color de fondo del carrusel */
+  }
+  
+  .carousel {
+    width: 100%;
+    height: 60vh; /* Ajusta la altura del carrusel según tus necesidades */
+  }
+  
+  .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+  }
+  

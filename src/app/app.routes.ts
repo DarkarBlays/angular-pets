@@ -3,12 +3,11 @@ import { HomeComponent } from './components/home/home.component';
 import { PetRegistryComponent } from './components/pet-registry/pet-registry.component';
 import { UserRegistryComponent } from './components/user-registry/user-registry.component';
 import { AdoptionComponent } from './components/adoption/adoption.component';
-import { FavouritesComponent } from './components/favourites/favourites.component';
 import { LoginComponent } from './components/login/login.component';
 
 export const routes: Routes = [
     {
-        path: '',
+        path: 'home',
         component: HomeComponent
     },
     {
@@ -24,11 +23,7 @@ export const routes: Routes = [
         component: AdoptionComponent
     },
     {
-        path: 'favourites',
-        component: FavouritesComponent
-    },
-    {
-        path: 'login',
+        path: '',
         component: LoginComponent
     },
     {

@@ -1,2 +1,40 @@
-<p>home works!</p>
-
+<div class="container-fluid p-0">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="background-color: #f8f9fa;">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://via.placeholder.com/1200x400.png?text=Imagen+1" class="d-block w-100" alt="Imagen 1">
+        </div>
+        <div class="carousel-item">
+          <img src="https://via.placeholder.com/1200x400.png?text=Imagen+2" class="d-block w-100" alt="Imagen 2">
+        </div>
+        <div class="carousel-item">
+          <img src="https://via.placeholder.com/1200x400.png?text=Imagen+3" class="d-block w-100" alt="Imagen 3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let animal of animals">
+        <div class="card">
+          <img [src]="animal.image" class="card-img-top" alt="{{ animal.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ animal.name }}</h5>
+            <p class="card-text">{{ animal.description }}</p>
+            <p class="card-text"><small class="text-muted">{{ animal.age }} años, {{ animal.breed }}</small></p>
+            <a href="/adoption" class="btn btn-primary">Adoptar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

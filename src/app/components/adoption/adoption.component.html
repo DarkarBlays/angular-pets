@@ -1,1 +1,37 @@
-<p>adoption works!</p>
+<div class="container mt-5">
+  <h2>Detalles del animal</h2>
+  <div *ngIf="animalDetail">
+    <p><strong>Nombre:</strong> {{ animalDetail.name }}</p>
+    <p><strong>Fecha de Nacimiento:</strong> {{ animalDetail.birthDate }}</p>
+    <p><strong>Tipo:</strong> {{ animalDetail.type }}</p>
+    <p><strong>Género:</strong> {{ animalDetail.gender }}</p>
+    <p><strong>Tamaño:</strong> {{ animalDetail.size }}</p>
+    <p><strong>Color:</strong> {{ animalDetail.color }}</p>
+    <p><strong>Historia:</strong> {{ animalDetail.story }}</p>
+    <p><strong>Habilidades Especiales:</strong> {{ animalDetail.specialSkills }}</p>
+    <p><strong>Nivel de Energía:</strong> {{ animalDetail.energyLevel }}</p>
+    <p><strong>Compatibilidad:</strong> {{ animalDetail.compatibility }}</p>
+    <p><strong>Estado:</strong> {{ animalDetail.status }}</p>
+  </div>
+  
+  <h2>Formulario de adopción</h2>
+  <form (ngSubmit)="onSubmit()" #adoptionForm="ngForm">
+    <div class="mb-3">
+      <label for="adoptionDate" class="form-label">Fecha de adopción</label>
+      <input type="date" class="form-control" id="adoptionDate" name="adoptionDate"  required>
+    </div>
+    <div class="mb-3">
+      <label for="adoptionType" class="form-label">Tipo de adopción</label>
+      <input type="text" class="form-control" id="adoptionType" name="adoptionType" required>
+    </div>
+    <div class="mb-3">
+      <label for="adoptionDuration" class="form-label">Duración de adopción</label>
+      <input type="text" class="form-control" id="adoptionDuration" name="adoptionDuration" required>
+    </div>
+    <div class="mb-3">
+      <label for="adoptionConditions" class="form-label">Condiciones de adopción</label>
+      <input type="text" class="form-control" id="adoptionConditions" name="adoptionConditions" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+</div>
